@@ -4,36 +4,22 @@ import List from './list';
 
 import './board.css';
 
-export default class Board extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            lists: [{
-                title: 'Example list 1'
-            }, {
-                title: 'Example list 2'
-            }]
-        };
-    }
-
-    render() {
-        const lists = this.state.lists.map((list, index) =>
-            <List key={index} {...list} />
-        );
-
-        return (
-            <div className="board">
-                <h2>{this.props.title}</h2>
-                <div className="lists">
-                    {lists}
-                </div>
-            </div>
-        );
-    }
+export default function Board() {
+    return (
+        <div className="board">
+            <h2>Example board</h2>
+            <ul className="lists">
+                <li className="list-wrapper">
+                  <List />
+                </li>
+                <li className="list-wrapper">
+                  <List />
+                </li>
+                <li className="list-wrapper">
+                  <List />
+                </li>
+            </ul>
+        </div>
+    );
 }
-
-Board.defaultProps = {
-    title: 'Board'
-};
 

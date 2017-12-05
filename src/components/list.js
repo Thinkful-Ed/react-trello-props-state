@@ -2,35 +2,21 @@ import React from 'react';
 
 import Card from './card';
 
-import './list.css';
-
-export default class List extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            cards: [{
-                text: 'Example card 1'
-            }, {
-                text: 'Example card 2'
-            }, {
-                text: 'Example card 3'
-            }]
-        }
-    }
-
-    render() {
-        const cards = this.state.cards.map((card, index) =>
-            <Card key={index} {...card} />
-        );
-        return (
-            <div className="list">
-                <h3>{this.props.title}</h3>
-                {cards}
-            </div>
-        );
-    }
+export default function List() {
+    return (
+        <div>
+            <h3>Example list</h3>
+            <ul className="list">
+              <li>
+                <Card />
+              </li>
+              <li>
+                <Card />
+              </li>
+              <li>
+                <Card />
+              </li>
+            </ul>
+        </div>
+    );
 }
-
-List.defaultProps = {
-    title: ''
-};
