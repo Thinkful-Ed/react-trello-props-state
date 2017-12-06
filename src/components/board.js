@@ -9,12 +9,10 @@ export default class Board extends React.Component {
     super(props);
 
     this.state = {
-      lists: [
-        {
-          title: 'Example list 1'
-        },
-        {
-          title: 'Example list 2'
+      lists: [{
+            title: 'Example list 1'
+        },{
+            title: 'Example list 2'
         }
       ]
     };
